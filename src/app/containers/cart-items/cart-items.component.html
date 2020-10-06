@@ -1,0 +1,36 @@
+<div class="cart " *ngIf="(cartItems$ | async) as cartItems">
+    <div *ngIf="cartItems.length<=0" class="jumbotron pb-0 mb-0">
+        <h1 class="display-4">
+            <p>Twój koszyk jest pusty!</p>
+        </h1>
+        <p class="lead"> 
+            Dodaj do niego coś z zakładki produkty :)
+        </p>
+        <hr class="mb-0"/>
+    </div> 
+    <div *ngIf="cartItems.length>0">
+        <table  class="table table-dark">
+            <thead>
+                <tr>
+                    <th class="column1" scope="col"></th>
+                    <th class="column2" scope="col">Produkty</th>
+                    <th class="column3" scope="col"></th>
+                    <th class="column4" scope="col">Cena jednostkowa</th>
+                    <th class="column5" scope="col">Ilość</th>
+                    <th class="column6" scope="col">Usuń</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <app-cart-item *ngFor="let cartItem of cartItems"
+                    (onDelete)="handleDelete($event)"
+                    [cartItem]="cartItem">
+    </app-cart-item>
+    <div class="order-button" *ngIf="cartItems.length>0">
+        <a routerLink="/order-form">
+            <button type="button" class="btn btn-primary">
+                Zamawiam
+            </button>
+        </a>
+    </div>
+</div>

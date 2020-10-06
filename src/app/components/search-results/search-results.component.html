@@ -1,0 +1,5 @@
+<div *ngIf="filteredProducts | async as filteredProducts">
+   <app-search-result *ngFor="let product of filteredProducts" [product]="product">
+
+   </app-search-result>
+</div>

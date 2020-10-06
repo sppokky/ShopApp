@@ -1,0 +1,43 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">
+        <h3>
+          {{ product.title }}
+        </h3>
+      </th>
+      <th scope="col">
+        <h4>
+          Kategoria
+        </h4>
+      </th>
+      <th scope="col">
+        <h4>
+          Cena
+        </h4>
+      </th>
+      <th class="add-button" scope="col">
+        <button class="btn btn-primary" (click)="handleAddToCart(product)">
+          Dodaj do koszyka
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="product-description-column" scope="row">
+        <p class="product-description">
+          {{ product.description }}
+        </p>
+      </th>
+      <td class="product-categoryPrice-column">
+        {{ product.category }}
+      </td>
+      <td class="product-categoryPrice-column">
+        {{ product.price }}€
+      </td>
+      <td style="text-align: center;">
+        <img class="image" [src]="product.image" [alt]="product.title" >
+      </td>
+  </tbody>
+</table>

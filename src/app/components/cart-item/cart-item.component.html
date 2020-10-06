@@ -1,0 +1,26 @@
+<div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="column1" scope="col">
+                    <img class="image" [src]="cartItem.image" [alt]="cartItem.title">
+                </th>
+                <th class="column2" scope="col">
+                    {{ cartItem.title }}
+                </th>
+                <th class="column3" scope="col"></th>
+                <th class="column4" scope="col">
+                    {{ cartItem.price }}€
+                </th>
+                <th class="column5" scope="col">
+                    work in progress...
+                </th>
+                <th class="column6" scope="col">
+                    <span class="delete" (click)="deleteFromCart(cartItem.id)">
+                        X
+                    </span>
+                </th>
+            </tr>
+        </tbody>
+  </table>
+</div>
